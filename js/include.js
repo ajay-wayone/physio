@@ -1,60 +1,80 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const includeElements = document.querySelectorAll("[include-html]");
-    includeElements.forEach(el => {
-        const file = el.getAttribute("include-html");
-        if (file) {
-            fetch(file)
-                .then(response => {
-                    if (response.ok) {
-                        return response.text();
-                    }
-                    throw new Error("Page not found: " + file);
-                })
-                .then(data => {
-                    // Insert the loaded HTML
-                    el.innerHTML = data;
-                    // Remove the attribute so it doesn't try to load again
-                    el.removeAttribute("include-html");
+document.addEventListener("DOMContentLoaded", loadIncludes);
 
-                    // If we just loaded the header, attach mobile menu and activate nav
-                    if (file === "header.html") {
-                        attachMobileMenu();
-                        // --- MANUAL TRIGGER for active nav item ---
-                        if (typeof window.setActiveNavItem === 'function') {
-                            window.setActiveNavItem();
-                        }
-                    }
-                })
-                .catch(error => console.error("Error including HTML:", error));
-        }
-    });
-});
+async function loadIncludes() {
+  const elements = document.querySelectorAll("[include-html]");
 
-// Function to attach mobile menu functionality
-function attachMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const headerNavigation = document.querySelector('.header-navigation');
-    const headerActionBtn = document.querySelector('.header-action-btn');
+  for (const el of elements) {
+    const file = el.getAttribute("include-html");
+    if (!file) continue;
 
-    if (mobileMenuBtn && headerNavigation) {
-        mobileMenuBtn.addEventListener('click', function () {
-            headerNavigation.classList.toggle('mobile-active');
-            mobileMenuBtn.classList.toggle('active');
-            // Also toggle the button visibility in mobile menu
-            if (headerActionBtn) {
-                headerActionBtn.classList.toggle('mobile-active');
-            }
-        });
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error("Cannot load " + file);
+
+      const html = await res.text();
+      el.innerHTML = html;
+      el.removeAttribute("include-html");
+
+      // If header loaded, initialize header logic immediately
+      if (file.includes("header.html")) {
+        initHeader();
+      }
+    } catch (e) {
+      console.error("Include error:", e);
+    }
+  }
+}
+
+function activateCurrentNav() {
+  const links = document.querySelectorAll(".header-navigation a");
+
+  if (!links.length) return;
+
+  // Get current page filename
+  let current = window.location.pathname.split("/").pop();
+  
+  // If pathname is empty or just "/", default to index
+  if (!current || current === "") {
+    current = "index";
+  }
+
+  // Remove .html extension for comparison
+  if (current.endsWith(".html")) {
+    current = current.replace(".html", "");
+  }
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    let file = href.split("/").pop();
+    
+    // Remove .html extension for comparison
+    if (file.endsWith(".html")) {
+      file = file.replace(".html", "");
     }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function (event) {
-        if (mobileMenuBtn && headerNavigation && headerActionBtn) {
-            if (!mobileMenuBtn.contains(event.target) && !headerNavigation.contains(event.target)) {
-                headerNavigation.classList.remove('mobile-active');
-                mobileMenuBtn.classList.remove('active');
-                headerActionBtn.classList.remove('mobile-active');
-            }
-        }
-    });
+    if (file === current) {
+      link.classList.add("active");
+    }
+  });
+}
+
+function initHeader() {
+  attachMobileMenu();
+  activateCurrentNav();
+}
+
+function attachMobileMenu() {
+  const btn = document.querySelector(".mobile-menu-btn");
+  const nav = document.querySelector(".header-navigation");
+  const actionBtn = document.querySelector(".header-action-btn");
+
+  if (!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("mobile-active");
+    btn.classList.toggle("active");
+    if (actionBtn) actionBtn.classList.toggle("mobile-active");
+  });
 }

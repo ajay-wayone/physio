@@ -233,7 +233,7 @@
 /* Global Variables & Reset */
 :root {
     --primary: #1B75BC;
-    --primary-hover: #155b96;
+    --primary-hover: #0d83d7;
     --primary-light: #E1F1FF;
     --accent: #36B074;
     --bg-color: #FFFFFF;
@@ -371,9 +371,10 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    background-color: #0096ff;
     color: var(--white);
     box-shadow: var(--shadow-glow);
+    border-radius: 50px;
 }
 
 .btn-primary:hover {
@@ -396,6 +397,7 @@ ul {
     background-color: var(--white);
     color: var(--text-dark);
     box-shadow: var(--shadow-sm);
+    border-radius: 50px;
 }
 
 .btn-white:hover {
@@ -415,12 +417,12 @@ ul {
     max-width: 1280px;
     height: 80px;
     /* Remove absolute positioning and transform */
-    position: fixed;
+    position: sticky;
     top: 20px;               /* Adjust this value as needed (original was 57px) */
     margin: 0 auto;           /* Center horizontally */
     border-radius: 10px;
     background: rgba(0, 150, 255, 1);
-    z-index: 999999;            /* Ensure it stays above other content */
+    z-index: 1000;            /* Ensure it stays above other content */
     box-shadow:
         5px 5px 13px 0px rgba(221, 221, 221, 0.9),
         -5px -5px 10px 0px rgba(255, 255, 255, 0.9),
@@ -561,7 +563,7 @@ ul {
     border-radius: 0 0 10px 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     gap: 15px;
-    z-index: 99999;
+    z-index: 99;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -1173,7 +1175,7 @@ ul {
     justify-content: space-between;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 5%;
     /* padding-bottom: 60px; */
     gap: 40px;
 }
@@ -1649,7 +1651,7 @@ ul {
 .what-is-container {
     display: flex;
     align-items: center;
-    gap: 0px;
+    gap: 80px;
 }
 
 .what-is-image,
@@ -2970,7 +2972,7 @@ ul {
     height: 220px;
     object-fit: contain;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     margin-right: -0px;
     transform: translateY(-10px);
 
@@ -2997,7 +2999,7 @@ ul {
     height: 275px;
     object-fit: contain;
     position: relative;
-    z-index: 1;
+    z-index: 999;
     margin-left: -183px;
     /* transform: translateY(-20px); */
 }
@@ -3010,7 +3012,7 @@ ul {
     justify-content: center;
     margin-top: -50px;
     position: relative;
-    z-index: 99;
+    z-index: 9999;
     padding: 20px;
     border-radius: 10px;
 }

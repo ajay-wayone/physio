@@ -8,11 +8,18 @@
     </div>
 
     <nav class="header-navigation">
-      <a href="index.html" class="nav-item active">Home</a>
+      <a href="index.html" class="nav-item">Home</a>
       <a href="about-us.html" class="nav-item">About Us</a>
       <a href="physiotherapist.html" class="nav-item">For Physiotherapist</a>
       <a href="patient.html" class="nav-item">For Patients</a>
-      <a href="blogs.html" class="nav-item">Blogs</a>
+      <div class="nav-item dropdown">
+        <span class="dropdown-title">Other</span>
+        <div class="dropdown-menu">
+          <a href="blogs.html" class="dropdown-item">Blogs</a>
+          <a href="infrastructure.html" class="dropdown-item">Infrastructure</a>
+          <a href="safety.html" class="dropdown-item">Safety</a>
+        </div>
+      </div>
     </nav>
 
     <button class="header-action-btn">Download the App</button>
@@ -27,6 +34,38 @@
 </header>
 
 <style>
+  /* Dropdown Styles */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 150, 255, 1);
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    background: rgba(0, 120, 220, 1);
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
   .main-header {
     position: fixed;
     width: 90%;
@@ -70,6 +109,16 @@
     transform-origin: center;
   }
 
+  .dropdown-menu {
+    position: static;
+    display: none;
+    background: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
   /* Animate to X when active */
   .mobile-menu-btn.active .top {
     transform: rotate(45deg) translate(0, 7px);
@@ -92,6 +141,6 @@
 
   menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('active');
-    nav.classList.toggle('open'); // Optional: for mobile menu toggle
+    nav.classList.toggle('open');
   });
 </script>
