@@ -1,0 +1,97 @@
+<header class="main-header">
+  <div class="nav-container">
+    <div class="header-logo-group">
+      <div class="logo-ellipse">
+        <img src="assets/icons/physio.svg" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+      <span class="logo-text">My Physio</span>
+    </div>
+
+    <nav class="header-navigation">
+      <a href="index.html" class="nav-item active">Home</a>
+      <a href="about-us.html" class="nav-item">About Us</a>
+      <a href="physiotherapist.html" class="nav-item">For Physiotherapist</a>
+      <a href="patient.html" class="nav-item">For Patients</a>
+      <a href="blogs.html" class="nav-item">Blogs</a>
+    </nav>
+
+    <button class="header-action-btn">Download the App</button>
+
+    <!-- Hamburger button -->
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <span class="bar top"></span>
+      <span class="bar middle"></span>
+      <span class="bar bottom"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .main-header {
+    position: fixed;
+    width: 90%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: rgba(0, 150, 255, 1);
+    box-shadow: 0px 4px 12px rgba(255, 255, 255);
+  }
+
+  /* Hamburger button */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  @media (max-width: 1024px) {
+    .mobile-menu-btn {
+      display: inline-flex;
+    }
+  }
+
+  /* Bars */
+  .mobile-menu-btn .bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    /* changed to white */
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    transform-origin: center;
+  }
+
+  /* Animate to X when active */
+  .mobile-menu-btn.active .top {
+    transform: rotate(45deg) translate(0, 7px);
+    /* adjust Y for perfect cross */
+  }
+
+  .mobile-menu-btn.active .middle {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.active .bottom {
+    transform: rotate(-45deg) translate(0, -7px);
+    /* adjust Y for perfect cross */
+  }
+</style>
+
+<script>
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.header-navigation');
+
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('open'); // Optional: for mobile menu toggle
+  });
+</script>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Physio - India's First Verified Physiotherapy Platform</title>
+    <meta name="description"
+        content="Skill-Ranked. Psychometrically Screened. Police Verified. Connecting Patients & Physiotherapists Through Structured Technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Multi-Layer Verification Engine ── */
+        .verification-section {
+
+            padding: 80px 0;
+            background: #ffffff;
+            font-family: var(--font-sans);
+        }
+
+        .ver-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 34px;
+            /* font-weight: 800; */
+            color: #222;
+            margin-bottom: 50px;
+        }
+
+        .ver-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .ver-block {
+            background: #D9D9D933;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 0px 60px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ver-block-reverse {
+            flex-direction: row-reverse;
+            margin-top: 100px;
+            justify-content: space-between;
+            gap: 50%;
+        }
+
+        .ver-content {
+            flex: 1;
+        }
+
+        .ver-content-short {
+            max-height: 260px;
+        }
+
+        .ver-content h4 {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .ver-content ol {
+            /* padding-left: 20px; */
+            counter-reset: ver-counter;
+            list-style: none;
+        }
+
+        .ver-content ol li {
+            counter-increment: ver-counter;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .ver-content ol li::before {
+            content: counter(ver-counter) ". ";
+            font-weight: 500;
+            color: #555;
+        }
+
+        .ver-mockup {
+            flex: 0 0 220px;
+        }
+
+        .ver-mock-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .phone-pop {
+            height: 150%;
+            width: auto;
+            position: relative;
+            top: -50px;
+            z-index: 20;
+            /* higher than parent */
+        }
+
+        .phone-pop.reverse {
+            top: -50px;
+            height: 100%;
+        }
+
+        .ver-mock-placeholder {
+            height: 100%;
+            position: relative;
+            overflow: visible;
+        }
+
+        .ver-footer {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+
+            .ver-block,
+            .ver-block-reverse {
+                flex-direction: column;
+                padding: 28px 24px;
+            }
+
+            .ver-mockup {
+                flex: unset;
+                width: 100%;
+            }
+
+            .ver-mock-placeholder {
+                height: 180px;
+            }
+
+            .phone-pop {
+                height: 120%;
+                top: -20px;
+            }
+
+            .phone-pop.reverse {
+                top: 0;
+                height: 120%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .growth-grid[style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            .growth-grid[style*="display: flex"] .growth-card {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section placeholder -->
+    <div include-html="header.html"></div>
+
+    <main>
+        <!-- PAGE_CONTENT_START -->
+        <!-- Safety Section -->
+        <section class="safety-hero-section">
+            <div class="safety-overlay"></div>
+
+            <div class="container safety-hero-container">
+                <div class="safety-hero-content">
+                    <h1 class="hero-title3">
+                        Built on Verification.<br>
+                        Backed by <span class="text-accent2">Safety</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- VERIFIED ONBOARDING SECTION -->
+          <!-- ── SECTION 2: Multi-Layer Verification Engine ── -->
+        <section class="verification-section">
+            <div class="container">
+                <h2 class="ver-title">VERIFIED ONBOARDING</h2>
+                <!-- <p class="ver-subtitle">The Rehabilitation Infrastructure Model begins with trust.</p> -->
+
+                <div class="ver-block">
+                    <div class="ver-content">
+                        <h4>For Physiotherapists:</h4>
+                        <ol>
+                            <li>Degree verification</li>
+                            <li>Council registration validation</li>
+                            <li>ID & address verification</li>
+                            <li>Psychometric assessment</li>
+                            <li>Video verification</li>
+                        </ol>
+                    </div>
+                    <div class="ver-mockup">
+                        <div class="ver-mock-placeholder">
+                            <img src="assets/infra/phone.png" alt="App Preview" class="phone-pop">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ver-block ver-block-reverse">
+                    <div class="ver-content ver-content-short">
+                        <h4>For Patients:</h4>
+                        <ol>
+                            <li>Identity validation</li>
+                            <li>Address verification</li>
+                            <li>Secure payment confirmation</li>
+                        </ol>
+                    </div>
+                    <div class="ver-mockup">
+                        <div class="ver-mock-placeholder">
+                            <img src="assets/infra/phone.png" alt="App Preview" class="phone-pop reverse">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="ver-footer">This creates a two-sided trust environment.</p>
+            </div>
+        </section>
+
+
+        <!-- PROFESSIONAL GROWTH FEATURES SECTION -->
+        <section class="growth-features-section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="safety-main-title">PROFESSIONAL GROWTH FEATURES</h2>
+
+                <div class="growth-grid">
+                    <!-- CARD 1 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/Vector (6).svg" alt="gps">
+                        </div>
+                        <p>Live GPS tracking</p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/Vector (5).svg" alt="sos">
+                        </div>
+                        <p>SOS emergency button</p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/Vector (5).svg" alt="support">
+                        </div>
+                        <p>24/7 support</p>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/Vector (6).svg" alt="cash">
+                        </div>
+                        <p>No cash transactions</p>
+                    </div>
+
+                    <!-- CARD 5 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/fluent_communication-person-20-filled.svg" alt="encrypted">
+                        </div>
+                        <p>Encrypted communication</p>
+                    </div>
+
+                    <!-- CARD 6 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/pajamas_work-item-incident.svg" alt="reporting">
+                        </div>
+                        <p>Incident reporting system</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ZERO-TOLERANCE POLICY SECTION -->
+        <section class="growth-features-section" style="padding-top: 0; padding-bottom: 80px;">
+            <div class="container">
+                <h2 class="safety-main-title">ZERO-TOLERANCE POLICY</h2>
+
+                <div class="growth-grid">
+                    <!-- CARD 1 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/do-not-touch 1.svg" alt="harassment">
+                        </div>
+                        <p>Harassment</p>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/fraud.svg" alt="fraud">
+                        </div>
+                        <p>Fraud</p>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="growth-card">
+                        <div class="icon">
+                            <img src="assets/icons/unethical-practice.svg" alt="unethical">
+                        </div>
+                        <p>Unethical practice</p>
+                    </div>
+                </div>
+
+                <div class="growth-grid" style="display: flex; justify-content: center; gap: 30px; margin-top: -20px;">
+                    <!-- CARD 4 -->
+                    <div class="growth-card" style="width: 31%;">
+                        <div class="icon">
+                            <img src="assets/icons/Group (3).svg" alt="bypass">
+                        </div>
+                        <p>Direct payment bypass</p>
+                    </div>
+
+                    <!-- CARD 5 -->
+                    <div class="growth-card" style="width: 31%;">
+                        <div class="icon">
+                            <img src="assets/icons/hugeicons_legal-document-01.svg" alt="suspension">
+                        </div>
+                        <p>Immediate suspension & legal action</p>
+                    </div>
+                </div>
+
+                <p class="growth-footer-text" style="margin-top: 80px;">This is a professional platform.</p>
+            </div>
+        </section>
+
+        <!-- App Section placeholder -->
+        <div include-html="get-my-physio.html"></div>
+
+        <!-- Contact Section placeholder -->
+        <div include-html="contact-section.html"></div>
+
+        <!-- Main Footer placeholder -->
+        <div include-html="footer.html"></div>
+    </main>
+
+    <!-- HTML Inclusion Script -->
+    <script src="js/include.js"></script>
+</body>
+
+</html>

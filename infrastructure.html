@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Physio - India's First Verified Physiotherapy Platform</title>
+    <meta name="description"
+        content="Skill-Ranked. Psychometrically Screened. Police Verified. Connecting Patients & Physiotherapists Through Structured Technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Reset & tokens (mirrors style.css) ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #1B75BC;
+            --primary-light: #E1F1FF;
+            --accent: #36B074;
+            --bg-color: #FFFFFF;
+            --bg-alt: #F5FAFF;
+            --text-dark: #222222;
+            --text-light: #555555;
+            --white: #FFFFFF;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --font-sans: 'Manrope', sans-serif;
+            --font-heading: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ══════════════════════════════════════
+           WHY MY PHYSIO EXISTS  – Section V2
+           (matches the uploaded screenshot exactly)
+        ══════════════════════════════════════ */
+
+        .reality-section-v2 {
+            padding: 80px 0 60px;
+            background-color: var(--white);
+            font-family: var(--font-sans);
+        }
+
+        /* ── Header ── */
+        .reality-header-v2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title-v2 {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-subtitle-v2 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.45;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* ── Two-column grid ── */
+        .reality-grid-v2 {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 0;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reality-column-v2 {
+            flex: 1;
+            border-radius: var(--radius-md);
+            padding: 40px 36px;
+        }
+
+        /* left  – pinkish */
+        .negative-col-v2 {
+            background-color: #FFF6F6;
+        }
+
+        /* right – light blue */
+        .positive-col-v2 {
+            background-color: #EAF8FF;
+        }
+
+        /* column label */
+        .col-heading-v2 {
+
+            font-size: 16px;
+            font-weight: 600;
+            color: #999;
+            letter-spacing: 0.4px;
+            margin-bottom: 56px;
+            margin-top: -26px;
+        }
+
+        /* column title */
+        .col-title-v2 {
+            font-family: var(--font-heading);
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+
+        /* ── Individual cards inside each column ── */
+        .reality-card-v2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .reality-card-v2:last-child {
+            margin-bottom: 0;
+        }
+
+        /* icon wrapper */
+        .reality-icon-v2 {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        /* SVG icons drawn inline – no image files needed */
+        .icon-warning {
+            width: 22px;
+            height: 22px;
+        }
+
+        .icon-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1B75BC;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .reality-content-v2 h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        /* ── Footer text ── */
+        .reality-footer-v2 {
+            text-align: center;
+            margin-top: 44px;
+        }
+
+        .reality-footer-v2 p {
+            font-size: 19px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 991px) {
+            .reality-grid-v2 {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title-v2 {
+                font-size: 28px;
+            }
+
+            .section-subtitle-v2 {
+                font-size: 17px;
+            }
+
+            .reality-column-v2 {
+                padding: 28px 20px;
+            }
+
+            .reality-footer-v2 p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reality-section-v2 {
+                padding: 56px 0 44px;
+            }
+        }
+
+
+        /* ── Platform Not Practice ── */
+        .platform-not-practice-section {
+            padding: 80px 0 60px;
+            background: #fff;
+            font-family: var(--font-sans);
+        }
+
+        .pnp-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pnp-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 38px;
+            /* font-weight: 800; */
+            text-transform: uppercase;
+            color: #222;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .pnp-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 19px;
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .pnp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto 48px;
+        }
+
+        .pnp-card {
+            background: #EAF6FF;
+            /* border-radius: 10px; */
+            padding: 32px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pnp-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pnp-card p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #686868;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .pnp-footer {
+            text-align: center;
+        }
+
+        .pnp-footer p {
+            font-size: 17px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .pnp-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pnp-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pnp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ── Multi-Layer Verification Engine ── */
+        .verification-section {
+
+            padding: 80px 0;
+            background: #ffffff;
+            font-family: var(--font-sans);
+        }
+
+        .ver-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 34px;
+            /* font-weight: 800; */
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .ver-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .ver-block {
+            background: #D9D9D933;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 0px 60px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ver-block-reverse {
+            flex-direction: row-reverse;
+            margin-top: 100px;
+            justify-content: space-between;
+            gap: 50%;
+        }
+
+        .ver-content {
+            flex: 1;
+        }
+
+        .ver-content-short {
+            max-height: 260px;
+        }
+
+        .ver-content h4 {
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .ver-content ol {
+            /* padding-left: 20px; */
+            counter-reset: ver-counter;
+            list-style: none;
+        }
+
+        .ver-content ol li {
+            counter-increment: ver-counter;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .ver-content ol li::before {
+            content: counter(ver-counter) ". ";
+            font-weight: 500;
+            color: #555;
+        }
+
+        .ver-mockup {
+            flex: 0 0 220px;
+        }
+
+        .ver-mock-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .phone-pop {
+            height: 150%;
+            width: auto;
+            position: relative;
+            top: -50px;
+            z-index: 20;
+            /* higher than parent */
+        }
+
+        .phone-pop.reverse {
+            top: -50px;
+            height: 100%;
+        }
+
+        .ver-mock-placeholder {
+            height: 100%;
+            position: relative;
+            overflow: visible;
+        }
+
+        .ver-footer {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 768px) {
+
+            .ver-block,
+            .ver-block-reverse {
+                flex-direction: column;
+                padding: 28px 24px;
+            }
+
+            .ver-mockup {
+                flex: unset;
+                width: 100%;
+            }
+
+            .ver-mock-placeholder {
+                height: 180px;
+            }
+
+            .phone-pop {
+                height: 120%;
+                top: -20px;
+            }
+
+            .phone-pop.reverse {
+                top: 0;
+                height: 120%;
+            }
+        }
+
+        /* ── Structured Skill Classification ── */
+        .skill-classification-section {
+            padding: 80px 0;
+            background: #fff;
+            font-family: var(--font-sans);
+        }
+
+        .skill-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 34px;
+            /* font-weight: 800; */
+            text-transform: uppercase;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .skill-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .skill-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-bottom: 36px;
+        }
+
+        .skill-levels {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .skill-level {
+            border: 1.5px solid #ddd;
+            border-radius: 6px;
+            padding: 16px 22px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .skill-level::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 6px 0 0 6px;
+        }
+
+        .level-1::before {
+            width: 4px;
+            background: #D9D9D9;
+        }
+
+        .level-2::before {
+            width: 7px;
+            background: #B3B3B3;
+        }
+
+        .level-3::before {
+            width: 11px;
+            background: #707070;
+        }
+
+        .level-4::before {
+            width: 14px;
+            background: #1B75BC;
+        }
+
+        .skill-classification {
+            flex: 0 0 300px;
+        }
+
+        .skill-class-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 14px;
+        }
+
+        .skill-class-box {
+            background: #EAF6FF;
+            border-radius: 10px;
+            padding: 24px 26px;
+        }
+
+        .skill-class-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-class-box li {
+            font-size: 15px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-class-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-arrow {
+            width: 22px;
+            height: 22px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .skill-creates {
+            margin-top: 10px;
+        }
+
+        .skill-creates p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .skill-creates ul {
+            padding-left: 22px;
+            list-style: disc;
+            margin-bottom: 20px;
+        }
+
+        .skill-creates ul li {
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .skill-creates-note {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .skill-wrapper {
+                flex-direction: column;
+            }
+
+            .skill-classification {
+                flex: unset;
+                width: 100%;
+            }
+
+            .skill-title {
+                font-size: 26px;
+            }
+        }
+
+        /* ── Safety & Accountability Grid ── */
+        .safety-accountability-section {
+            padding: 70px 0;
+            background: #f3f3f3;
+            font-family: var(--font-sans);
+        }
+
+        .sag-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            /* font-weight: 800; */
+            text-transform: uppercase;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .sag-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 28px;
+        }
+
+        .sag-intro {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .sag-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 60px;
+            margin-bottom: 32px;
+            max-width: 1200px;
+            justify-content: space-between;
+        }
+
+        .sag-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #444;
+            /* flex: 0 0 calc((100% - 60px) / 3); */
+        }
+
+        .sag-footer {
+            font-size: 17px;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .sag-item {
+                flex: 1 1 45%;
+            }
+
+            .sag-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sag-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* ── Economic & Social Impact ── */
+        .impact-section {
+            padding: 80px 0 70px;
+            background: #fff;
+            font-family: var(--font-sans);
+        }
+
+        .impact-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            /* font-weight: 800; */
+            text-transform: uppercase;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .impact-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 36px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+
+        .impact-card {
+            background: #D9D9D933;
+            border-radius: 10px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .impact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: auto;
+        }
+
+        .impact-card p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .impact-footer {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-title {
+                font-size: 26px;
+            }
+        }
+
+        /* ── Closing Statement ── */
+        .closing-section {
+            padding: 80px 0;
+            background: #dff0fb;
+            font-family: var(--font-sans);
+        }
+
+        .closing-container {
+            text-align: center;
+            max-width: 760px;
+        }
+
+        .closing-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            /* font-weight: 800; */
+            color: #222;
+            margin-bottom: 16px;
+        }
+
+        .closing-subtitle {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .closing-future {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 18px;
+        }
+
+        .closing-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background: #1B75BC;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .closing-banner span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .closing-tagline {
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        @media (max-width: 480px) {
+            .closing-title {
+                font-size: 24px;
+            }
+
+            .closing-banner {
+                padding: 14px 20px;
+                font-size: 14px;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section placeholder -->
+    <div include-html="header.html"></div>
+
+    <main>
+
+        <section class="infrastructure-hero-section">
+            <div class="safety-overlay"></div>
+
+            <div class="container safety-hero-container">
+                <div class="safety-hero-content">
+                    <h1 class="hero-title2">
+                        India’s physiotherapy <br> <span class="text-accent2">ecosystem</span> remains <br> largely
+                        unstructured.
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY MY PHYSIO EXISTS  –  Section -->
+        <section class="reality-section-v2">
+            <div class="container">
+
+                <!-- Header -->
+                <div class="reality-header-v2">
+                    <h2 class="section-title-v2">Why My Physio Exists</h2>
+                    <p class="section-subtitle-v2">
+                        India's home physiotherapy system lacks structure, safety and accountability.
+                        We are here to fix that.
+                    </p>
+                </div>
+
+                <!-- Two-column grid -->
+                <div class="reality-grid-v2">
+
+                    <!-- LEFT – problems -->
+                    <div class="reality-column-v2 negative-col-v2">
+                        <p class="col-heading-v2">The current landscape includes:</p>
+
+                        <!-- Card 1 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <!-- Warning triangle (orange/red) -->
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Independent practitioners without standardized ranking</h4>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>No unified verification framework</h4>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>No psychometric screening</h4>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Informal payment systems</h4>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Limited safety accountability for home visits</h4>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <svg class="icon-warning" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        fill="#FF6B6B" opacity="0.25" />
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                                        stroke="#E53935" stroke-width="1.5" stroke-linejoin="round" />
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="#E53935" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <circle cx="12" cy="16.5" r="0.75" fill="#E53935" />
+                                </svg>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>No structured employment ladder for physiotherapists</h4>
+                            </div>
+                        </div>
+                    </div><!-- /negative-col-v2 -->
+
+                    <!-- RIGHT – opportunities -->
+                    <div class="reality-column-v2 positive-col-v2">
+                        <p class="col-heading-v2">Despite rising demand in:</p>
+
+                        <!-- Dot items -->
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <div class="icon-dot"></div>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Post-surgical rehabilitation</h4>
+                            </div>
+                        </div>
+
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <div class="icon-dot"></div>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Elderly care</h4>
+                            </div>
+                        </div>
+
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <div class="icon-dot"></div>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Chronic pain management</h4>
+                            </div>
+                        </div>
+
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <div class="icon-dot"></div>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Neurological recovery</h4>
+                            </div>
+                        </div>
+
+                        <div class="reality-card-v2">
+                            <div class="reality-icon-v2">
+                                <div class="icon-dot"></div>
+                            </div>
+                            <div class="reality-content-v2">
+                                <h4>Sports rehabilitation</h4>
+                            </div>
+                        </div>
+                    </div><!-- /positive-col-v2 -->
+
+                </div><!-- /reality-grid-v2 -->
+
+                <!-- Footer text -->
+                <div class="reality-footer-v2">
+                    <p>There is no organized digital infrastructure governing this sector.</p>
+                    <p>My Physio is designed to fill that structural gap.</p>
+                </div>
+
+            </div><!-- /container -->
+        </section>
+
+
+
+        <!-- ── SECTION 1: Platform, Not Practice ── -->
+        <section class="platform-not-practice-section">
+            <div class="container">
+                <div class="pnp-header">
+                    <h2 class="pnp-title">Platform, Not Practice</h2>
+                    <p class="pnp-subtitle">
+                        My Physio does not operate as a clinic<br>
+                        My Physio operates as a structured digital infrastructure that enables:
+                    </p>
+                </div>
+
+                <div class="pnp-grid">
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1B75BC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg> -->
+                            <img src="/My-physio/assets/infra/logo1.png" alt="Verified onboarding" width="40"
+                                height="40">
+
+                        </div>
+                        <p>Verified onboarding</p>
+                    </div>
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <img src="/My-physio/assets/infra/logo2.png" alt="Verified onboarding" width="40"
+                                height="40">
+                        </div>
+                        <p>Skill-based classification</p>
+                    </div>
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <img src="/My-physio/assets/infra/logo3.png" alt="Verified onboarding" width="40"
+                                height="40">
+                        </div>
+                        <p>Geo-intelligent allocation</p>
+                    </div>
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <img src="/My-physio/assets/infra/logo4.png" alt="Verified onboarding" width="40"
+                                height="40">
+                        </div>
+                        <p>Escrow-based digital payments</p>
+                    </div>
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <img src="/My-physio/assets/infra/logo5.png" alt="Verified onboarding" width="40"
+                                height="40">
+                        </div>
+                        <p>Performance-based visibility</p>
+                    </div>
+                    <div class="pnp-card">
+                        <div class="pnp-icon">
+                            <img src="/My-physio/assets/infra/logo5.png" alt="Verified onboarding" width="40"
+                                height="40">
+                        </div>
+                        <p>Safety-regulated home visits</p>
+                    </div>
+                </div>
+
+                <div class="pnp-footer">
+                    <p>The platform connects patients and physiotherapists within a standardized framework</p>
+                    <p>The infrastructure governs quality. The professionals deliver care.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ── SECTION 2: Multi-Layer Verification Engine ── -->
+        <section class="verification-section">
+            <div class="container">
+                <h2 class="ver-title">The Multi-Layer Verification Engine</h2>
+                <p class="ver-subtitle">The Rehabilitation Infrastructure Model begins with trust.</p>
+
+                <div class="ver-block">
+                    <div class="ver-content">
+                        <h4>Every physiotherapist undergoes:</h4>
+                        <ol>
+                            <li>Identity &amp; address verification</li>
+                            <li>Degree &amp; council registration validation</li>
+                            <li>Video verification</li>
+                            <li>Psychometric assessment (ethics, empathy, professionalism)</li>
+                            <li>Agreement to code of conduct</li>
+                        </ol>
+                    </div>
+                    <div class="ver-mockup">
+                        <div class="ver-mock-placeholder">
+                            <img src="/My-physio/assets/infra/phone.png" alt="App Preview" class="phone-pop">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ver-block ver-block-reverse">
+                    <div class="ver-content ver-content-short">
+                        <h4>Patients undergo:</h4>
+                        <ol>
+                            <li>Identity verification</li>
+                            <li>Address validation for home visits</li>
+                            <li>Secure digital payment onboarding</li>
+                        </ol>
+                    </div>
+                    <div class="ver-mockup">
+                        <div class="ver-mock-placeholder">
+                            <img src="/My-physio/assets/infra/phone.png" alt="App Preview" class="phone-pop reverse">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="ver-footer">This creates a two-sided trust environment.</p>
+            </div>
+        </section>
+
+
+        <!-- ── SECTION 3: Structured Skill Classification ── -->
+        <section class="skill-classification-section">
+            <div class="container">
+                <h2 class="skill-title">Structured Skill Classification</h2>
+                <p class="skill-subtitle">Unlike informal marketplaces, My Physio introduces a merit-based ranking
+                    system</p>
+
+                <div class="skill-wrapper">
+                    <div class="skill-levels">
+                        <div class="skill-level level-1"><span>LEVEL 1: Certified</span></div>
+                        <div class="skill-level level-2"><span>LEVEL 2: Senior</span></div>
+                        <div class="skill-level level-3"><span>LEVEL 3: Specialist</span></div>
+                        <div class="skill-level level-4"><span>LEVEL 4: Elite</span></div>
+                    </div>
+                    <div class="skill-classification">
+                        <p class="skill-class-label">Classification is based on:</p>
+                        <div class="skill-class-box">
+                            <ul>
+                                <li><span class="skill-arrow">↑</span> Experience</li>
+                                <li><span class="skill-arrow">↑</span> Assessment results</li>
+                                <li><span class="skill-arrow">↑</span> Performance score</li>
+                                <li><span class="skill-arrow">↑</span> Ratings</li>
+                                <li><span class="skill-arrow">↑</span> Session completion behavior</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-creates">
+                    <p><strong>This creates:</strong></p>
+                    <ul>
+                        <li>Transparency for patients</li>
+                        <li>Career progression for physiotherapists</li>
+                        <li>Structured pricing differentiation</li>
+                    </ul>
+                    <p class="skill-creates-note">The ranking system transforms physiotherapy from freelance practice to
+                        measurable professional identity.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ── SECTION 4a: Safety & Accountability Grid ── -->
+        <section class="safety-accountability-section">
+            <div class="container">
+                <h2 class="sag-title">Safety &amp; Accountability Grid</h2>
+                <p class="sag-subtitle">Home healthcare requires institutional safeguards.</p>
+                <p class="sag-intro"><strong>The infrastructure includes:</strong></p>
+
+                <div class="sag-grid">
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>Incident reporting system</span>
+                    </div>
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>Escrow-based payments (no cash exchange)</span>
+                    </div>
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>Live GPS tracking</span>
+                    </div>
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>Encrypted in-app communication</span>
+                    </div>
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>Zero-tolerance misconduct policy</span>
+                    </div>
+                    <div class="sag-item">
+                        <img src="assets/infra/tick.png" alt="tick" width="18" height="18">
+                        <span>SOS emergency activation</span>
+                    </div>
+                </div>
+
+                <p class="sag-footer"><strong>Trust is not assumed. It is engineered.</strong></p>
+            </div>
+        </section>
+
+        <!-- ── SECTION 4b: Economic & Social Impact ── -->
+        <section class="impact-section">
+            <div class="container">
+                <h2 class="impact-title">Economic &amp; Social Impact</h2>
+                <p class="impact-subtitle">The Rehabilitation Infrastructure Model contributes to:</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <img src="/My-physio/assets/infra/impactlogo1.png" />
+                        </div>
+                        <p>Formalization of physiotherapy employment</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <img src="/My-physio/assets/infra/impactlogo2.png" />
+
+                        </div>
+                        <p>Structured earning opportunities</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <img src="/My-physio/assets/infra/impactlogo3.png" />
+
+                        </div>
+                        <p>Increased patient safety</p>
+                    </div>
+                </div>
+
+                <p class="impact-footer"><strong>It converts an unorganized service sector into a governed professional
+                        network</strong></p>
+            </div>
+        </section>
+
+
+        <!-- ── SECTION 5: Closing Statement ── -->
+        <section class="closing-section">
+            <div class="container closing-container">
+                <h2 class="closing-title">My Physio is not a service provider</h2>
+                <p class="closing-subtitle">
+                    It is a structured digital infrastructure governing verified physiotherapy<br>
+                    access and employment across India.
+                </p>
+                <p class="closing-future"><strong>The future of rehabilitation will not be informal.</strong></p>
+                <div class="closing-banner">
+                    <span>It will be structured.</span>
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Verified.
+                    </span>
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Ranked.
+                    </span>
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Accountable.
+                    </span>
+                </div>
+                <p class="closing-tagline">My Physio is building that structure.</p>
+            </div>
+        </section>
+
+        <!-- App Section placeholder -->
+        <div include-html="get-my-physio.html"></div>
+
+        <!-- Contact Section placeholder -->
+        <div include-html="contact-section.html"></div>
+
+        <!-- Footer placeholder -->
+        <div include-html="footer.html"></div>
+
+    </main>
+
+    <!-- HTML Inclusion Script -->
+    <script src="js/include.js"></script>
+</body>
+
+</html>
