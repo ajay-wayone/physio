@@ -58,6 +58,13 @@
                             <path
                                 d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                         </svg></a>
+
+                    <a href="#" class="social-icon-blue">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M23.5 6.2a2.94 2.94 0 0 0-2.07-2.08C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.43.62A2.94 2.94 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.94 2.94 0 0 0 2.07 2.08C4.5 20.5 12 20.5 12 20.5s7.5 0 9.43-.62a2.94 2.94 0 0 0 2.07-2.08A30.9 30.9 0 0 0 24 12a30.9 30.9 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -88,11 +95,37 @@
                             <option value="" disabled selected>Select</option>
                             <option value="patient">Patient</option>
                             <option value="physio">Physiotherapist</option>
+                            <option value="placement_officer">Placement Officer</option>
+                            <option value="institute_representative">Institute Representative</option>
+                            <option value="authorised_representative_hospital">Authorised Representative of Hospital
+                            </option>
+                            <option value="corporate_partner">Corporate Partner</option>
+                            <option value="investor">Investor</option>
+                            <option value="other">Other</option>
                         </select>
+                    </div>
+                    <div class="input-group" id="other-role-group" style="display: none;">
+                        <label for="c-other-role">Please specify</label>
+                        <input type="text" style="margin-top: 6px;" id="c-other-role" placeholder="Enter your role">
                     </div>
                     <div class="input-group">
                         <label for="c-subject">Subject</label>
-                        <input type="text" id="c-subject" placeholder="What is this about">
+                        <select id="c-subject">
+                            <option value="" disabled selected>What is this about</option>
+                            <option value="city_expansion_enquiries">City Expansion Enquiries</option>
+                            <option value="corporate_partnership">Corporate Partnership</option>
+                            <option value="investor_enquiry">Investor Enquiry</option>
+                            <!-- <option value="mention_subject">Mention your subject</option> -->
+                            <option value="patient_support">Patient Support</option>
+                            <option value="physiotherapist_registration">Physiotherapist Registration</option>
+                            <option value="support">Support</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="other-subject-group" style="display: none;">
+                        <label for="c-other-subject">Please specify</label>
+                        <input type="text" id="c-other-subject" style="margin-top: 6px;"
+                            placeholder="Enter your subject">
                     </div>
                 </div>
                 <div class="input-group message-group">

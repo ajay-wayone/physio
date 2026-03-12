@@ -19,6 +19,11 @@ async function loadIncludes() {
       if (file.includes("header.html")) {
         initHeader();
       }
+
+      // If contact section loaded, initialize contact form logic
+      if (file.includes("contact-section.html")) {
+        initContactForm();
+      }
     } catch (e) {
       console.error("Include error:", e);
     }
@@ -32,7 +37,7 @@ function activateCurrentNav() {
 
   // Get current page filename
   let current = window.location.pathname.split("/").pop();
-  
+
   // If pathname is empty or just "/", default to index
   if (!current || current === "") {
     current = "index";
@@ -48,7 +53,7 @@ function activateCurrentNav() {
     if (!href) return;
 
     let file = href.split("/").pop();
-    
+
     // Remove .html extension for comparison
     if (file.endsWith(".html")) {
       file = file.replace(".html", "");
@@ -77,4 +82,51 @@ function attachMobileMenu() {
     btn.classList.toggle("active");
     if (actionBtn) actionBtn.classList.toggle("mobile-active");
   });
+}
+
+function initContactForm() {
+  const roleSelect = document.getElementById("c-role");
+  const subjectSelect = document.getElementById("c-subject");
+  const otherRoleGroup = document.getElementById("other-role-group");
+  const otherSubjectGroup = document.getElementById("other-subject-group");
+
+  // Remove patient and physio options if on infrastructure page
+  if (window.location.pathname.includes('/infrastructure')) {
+    if (roleSelect) {
+      const patientOption = roleSelect.querySelector('option[value="patient"]');
+      const physioOption = roleSelect.querySelector('option[value="physio"]');
+      if (patientOption) patientOption.remove();
+      if (physioOption) physioOption.remove();
+    }
+
+    if (subjectSelect) {
+      const patientSupport = subjectSelect.querySelector('option[value="patient_support"]');
+      const physioRegistration = subjectSelect.querySelector('option[value="physiotherapist_registration"]');
+
+      if (patientSupport) patientSupport.remove();
+      if (physioRegistration) physioRegistration.remove();
+    }
+  }
+
+
+
+  if (roleSelect) {
+    roleSelect.addEventListener("change", function () {
+      if (this.value === "other") {
+        otherRoleGroup.style.display = "block";
+      } else {
+        otherRoleGroup.style.display = "none";
+      }
+    });
+  }
+
+  if (subjectSelect) {
+    subjectSelect.addEventListener("change", function () {
+      if (this.value === "others") {
+        otherSubjectGroup.style.display = "block";
+      } else {
+        otherSubjectGroup.style.display = "none";
+      }
+    });
+  }
 }

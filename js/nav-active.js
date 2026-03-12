@@ -6,7 +6,7 @@ function activateCurrentNav() {
 
   // Get current page filename
   let current = window.location.pathname.split("/").pop();
-  
+
   // If pathname is empty or just "/", default to index.html
   if (!current || current === "") {
     current = "index.html";
