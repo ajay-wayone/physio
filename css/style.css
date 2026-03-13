@@ -296,7 +296,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    color: var(--text-white);
+    color: var(--text-dark);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -337,7 +337,7 @@ ul {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 35px;
 }
 
 /* Logo Circle Effect */
@@ -651,7 +651,7 @@ ul {
 /* Blogs hero section */
 .blogs-hero-section {
     position: relative;
-    height: 900px;
+    height: 700px;
     background: url("../assets/images/Rectangle 79.png") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -773,18 +773,18 @@ ul {
 
 .safety-hero-section {
     position: relative;
-    height: 900px;
-    background-image: url("../assets/images/safety-hero.png");
+    height: 800px;
+    background-image: url("../assets/images/safety-hero.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .infrastructure-hero-section {
     position: relative;
-    height: 900px;
+    height: 800px;
     background-image: url("../assets/infra/infrastructure.png");
     background-size: cover;
     background-position: center;
@@ -808,13 +808,14 @@ ul {
     position: relative;
     z-index: 2;
     text-align: center;
+    padding-top: 250px;
 }
 
 /* title */
 .hero-title3 {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 96px;
+    font-size: 80px;
     line-height: 100%;
     color: white;
     text-align: center;
@@ -834,6 +835,10 @@ ul {
     .hero-title3 {
         font-size: 48px;
     }
+
+    .safety-hero-container {
+        padding-top: 150px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -843,6 +848,10 @@ ul {
 
     .hero-title3 {
         font-size: 36px;
+    }
+
+    .safety-hero-container {
+        padding-top: 120px;
     }
 }
 
@@ -1051,7 +1060,7 @@ ul {
 
 .physiotherapist-hero-section {
     position: relative;
-    height: 900px;
+    height: 700px;
     background: url("../assets/images/Physiotherapist1.png") center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -1074,7 +1083,7 @@ ul {
 
 .physio-hero-title {
     font-family: "Inter", sans-serif;
-    font-size: 90px;
+    font-size: 80px;
     font-weight: 700;
     line-height: 1;
     color: #ffffff;
@@ -1096,7 +1105,7 @@ ul {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 371px 107px 0 107px;
+    padding: 250px 100px 0px 70px;
 }
 
 /* hero text block */
@@ -1106,7 +1115,7 @@ ul {
 
 .hero-title2 {
     font-family: 'Inter', sans-serif;
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 700;
     line-height: 100%;
     letter-spacing: 0;
@@ -1188,7 +1197,7 @@ ul {
 
 .hero-content {
     flex: 1;
-    max-width: 650px;
+    max-width: 900px;
 }
 
 .hero-title {
@@ -1657,7 +1666,7 @@ ul {
 .what-is-container {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 0px;
 }
 
 .what-is-image,
@@ -2153,6 +2162,7 @@ ul {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 20px;
+    color: var(--white);
 }
 
 .links-col ul {
@@ -3005,7 +3015,7 @@ ul {
     height: 275px;
     object-fit: contain;
     position: relative;
-    z-index: 999;
+    z-index: 2;
     margin-left: -183px;
     /* transform: translateY(-20px); */
 }
@@ -3018,7 +3028,7 @@ ul {
     justify-content: center;
     margin-top: -50px;
     position: relative;
-    z-index: 9999;
+    z-index: 3;
     padding: 20px;
     border-radius: 10px;
 }
@@ -3546,17 +3556,18 @@ ul {
 
 .about-my-physio {
     background: #d6f0ff;
-    padding: 120px 0 0 0;
+    padding: 60px 0 0 0;
     overflow: hidden;
 }
 
 /* container alignment */
 
 .about-wrapper {
+    margin-top: -80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 80px;
+    gap: 30px;
 }
 
 
@@ -3587,6 +3598,7 @@ ul {
 }
 
 .about-list {
+    line-height: normal;
     list-style: none;
     padding: 0;
 }
@@ -3597,7 +3609,7 @@ ul {
     gap: 10px;
     font-size: 22px;
     color: rgba(30, 30, 30, 0.6);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .about-list img {
@@ -4264,5 +4276,205 @@ body {
     .earn-desc {
         margin: 0 auto;
         text-align: center;
+    }
+}
+
+/* ============================================= */
+/* Testimonial Carousel Section (Isolated)       */
+/* All classes prefixed with tc- to avoid conflicts */
+/* ============================================= */
+
+.testimonial-section {
+    padding: 80px 0;
+    background: #f9fafb;
+    font-family: var(--font-sans);
+}
+
+.testimonial-section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.testimonial-section-subtitle {
+    font-size: 18px;
+    color: #6b7280;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Carousel track */
+.tc-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 32px;
+}
+
+/* Card */
+.tc-card {
+    min-width: calc(33.333% - 16px);
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f3f4f6;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+/* Stars */
+.tc-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    color: #facc15;
+}
+
+.tc-stars svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Quote */
+.tc-quote {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 32px;
+    font-style: italic;
+}
+
+/* Reviewer */
+.tc-reviewer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tc-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.tc-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111827;
+}
+
+.tc-role {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Navigation Buttons */
+.tc-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #374151;
+    border: 1px solid #f3f4f6;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tc-nav-btn:hover {
+    color: #4f46e5;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tc-nav-prev {
+    left: -20px;
+}
+
+.tc-nav-next {
+    right: -20px;
+}
+
+/* Pagination Dots */
+.tc-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.tc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.tc-dot:hover {
+    background: #9ca3af;
+}
+
+.tc-dot-active {
+    background: #4f46e5;
+}
+
+/* Desktop: show nav buttons */
+@media (min-width: 768px) {
+    .tc-nav-btn {
+        display: flex;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .tc-card {
+        min-width: calc(50% - 12px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .tc-card {
+        min-width: 100%;
+    }
+
+    .testimonial-section-title {
+        font-size: 28px;
+    }
+
+    .testimonial-section-subtitle {
+        font-size: 16px;
+    }
+
+    .testimonial-section {
+        padding: 50px 0;
     }
 }
