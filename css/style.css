@@ -4286,8 +4286,16 @@ body {
 
 .testimonial-section {
     padding: 80px 0;
-    background: #f9fafb;
+    background: #f0f2f5;
     font-family: var(--font-sans);
+}
+
+.tc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .testimonial-section-title {
@@ -4302,7 +4310,7 @@ body {
     font-size: 18px;
     color: #6b7280;
     max-width: 640px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     text-align: center;
     line-height: 1.6;
 }
@@ -4316,24 +4324,26 @@ body {
     scrollbar-width: none;
 }
 
-/* Carousel track */
+/* Carousel track - 3 cards visible */
 .tc-carousel {
     display: flex;
     gap: 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding-bottom: 32px;
+    padding-bottom: 8px;
 }
 
 /* Card */
 .tc-card {
-    min-width: calc(33.333% - 16px);
+    width: calc(33.333% - 16px) !important;
+    min-width: calc(33.333% - 16px) !important;
+    max-width: calc(33.333% - 16px) !important;
     background: #ffffff;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    border: 1px solid #f3f4f6;
-    scroll-snap-align: center;
+    padding: 28px 28px 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -4344,47 +4354,61 @@ body {
 .tc-stars {
     display: flex;
     gap: 4px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     color: #facc15;
 }
 
 .tc-stars svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Quote Icon */
+.tc-quote-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 16px;
+    color: #94a3b8;
+    opacity: 0.7;
 }
 
 /* Quote */
 .tc-quote {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.65;
     color: #374151;
-    margin-bottom: 32px;
-    font-style: italic;
+    margin-bottom: 24px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 /* Reviewer */
 .tc-reviewer {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+    margin-top: auto;
 }
 
 .tc-avatar {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .tc-name {
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 14px;
     color: #111827;
+    margin-bottom: 2px;
 }
 
 .tc-role {
-    font-size: 14px;
+    font-size: 11px;
     color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Navigation Buttons */
@@ -4456,14 +4480,18 @@ body {
 /* Tablet */
 @media (max-width: 1024px) {
     .tc-card {
-        min-width: calc(50% - 12px);
+        width: calc(50% - 12px) !important;
+        min-width: calc(50% - 12px) !important;
+        max-width: calc(50% - 12px) !important;
     }
 }
 
 /* Mobile */
 @media (max-width: 640px) {
     .tc-card {
-        min-width: 100%;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
     }
 
     .testimonial-section-title {
