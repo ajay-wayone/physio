@@ -42,63 +42,20 @@
             <div class="container">
                 <div class="blog-filters">
                     <span class="filter-label">Filters :</span>
-                    <button class="filter-btn active">All posts</button>
-                    <button class="filter-btn">Physiotherapy Awareness</button>
-                    <button class="filter-btn">Home Rehab Education</button>
+                    <button class="filter-btn active" data-category="all">All posts</button>
+                    <div id="category-filters"></div>
                 </div>
 
-                <div class="blog-grid">
-                    <!-- Blog Card 1 -->
-                    <div class="blog-card">
-                        <img src="assets/images/Rectangle 3463644.png" alt="blog image">
-                        <div class="blog-card-content">
-                            <h3>Physiotherapy Awareness</h3>
-                            <p>Understand pain, posture, injuries, and how physiotherapy improves everyday life.</p>
-                            <div class="blog-card-bottom">
-                                <span>Feb 25, 2026</span>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Card 2 -->
-                    <div class="blog-card">
-                        <img src="assets/images/Rectangle 3463644.png" alt="blog image">
-                        <div class="blog-card-content">
-                            <h3>Physiotherapy Awareness</h3>
-                            <p>Understand pain, posture, injuries, and how physiotherapy improves everyday life.</p>
-                            <div class="blog-card-bottom">
-                                <span>Feb 25, 2026</span>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Card 3 -->
-                    <div class="blog-card">
-                        <img src="assets/images/Rectangle 3463644.png" alt="blog image">
-                        <div class="blog-card-content">
-                            <h3>Physiotherapy Awareness</h3>
-                            <p>Understand pain, posture, injuries, and how physiotherapy improves everyday life.</p>
-                            <div class="blog-card-bottom">
-                                <span>Feb 25, 2026</span>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Card 4 -->
-                    <div class="blog-card">
-                        <img src="assets/images/Rectangle 3463644.png" alt="blog image">
-                        <div class="blog-card-content">
-                            <h3>Physiotherapy Awareness</h3>
-                            <p>Understand pain, posture, injuries, and how physiotherapy improves everyday life.</p>
-                            <div class="blog-card-bottom">
-                                <span>Feb 25, 2026</span>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="blog-grid" class="blog-grid">
+                    <!-- Blog cards will be loaded here dynamically -->
+                </div>
+                
+                <div id="loading" class="loading-spinner" style="display: none; text-align: center; padding: 40px;">
+                    <p>Loading blogs...</p>
+                </div>
+                
+                <div id="error-message" class="error-message" style="display: none; text-align: center; padding: 40px; color: #d32f2f;">
+                    <p>Failed to load blogs. Please try again later.</p>
                 </div>
             </div>
         </section>
@@ -112,6 +69,154 @@
 
     <!-- HTML Inclusion Script -->
     <script src="js/include.js"></script>
+    
+    <!-- Configuration Script -->
+    <script src="js/config.js"></script>
+    
+    <!-- Blogs Dynamic Script -->
+    <script>
+        const API_URL = CONFIG.getBlogListUrl();
+        let allBlogs = [];
+        let categories = [];
+
+        // Fetch blogs from API
+        async function fetchBlogs() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error-message');
+            const blogGrid = document.getElementById('blog-grid');
+
+            try {
+                loadingEl.style.display = 'block';
+                errorEl.style.display = 'none';
+
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    mode: 'cors',
+                    credentials: 'omit'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                if (!data.data || !data.data.result) {
+                    throw new Error('Invalid API response format');
+                }
+
+                allBlogs = data.data.result || [];
+
+                // Extract unique categories
+                const categoryMap = {};
+                allBlogs.forEach(blog => {
+                    if (!categoryMap[blog.categorySlug]) {
+                        categoryMap[blog.categorySlug] = {
+                            name: blog.categoryName,
+                            slug: blog.categorySlug
+                        };
+                    }
+                });
+                categories = Object.values(categoryMap);
+
+                // Render category filters
+                renderCategoryFilters();
+
+                // Render blogs
+                renderBlogs(allBlogs);
+
+                loadingEl.style.display = 'none';
+            } catch (error) {
+                console.error('Error fetching blogs:', error);
+                console.error('API URL:', API_URL);
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                errorEl.innerHTML = `<p>Failed to load blogs. Error: ${error.message}</p><p style="font-size: 0.9rem; margin-top: 10px;">Make sure the API server is running and accessible.</p>`;
+            }
+        }
+
+        // Render category filter buttons
+        function renderCategoryFilters() {
+            const filterContainer = document.getElementById('category-filters');
+            filterContainer.innerHTML = '';
+
+            categories.forEach(category => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = category.name;
+                btn.setAttribute('data-category', category.slug);
+                btn.addEventListener('click', () => filterBlogs(category.slug));
+                filterContainer.appendChild(btn);
+            });
+        }
+
+        // Render blog cards
+        function renderBlogs(blogs) {
+            const blogGrid = document.getElementById('blog-grid');
+            blogGrid.innerHTML = '';
+
+            if (blogs.length === 0) {
+                blogGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px;">No blogs found.</p>';
+                return;
+            }
+
+            blogs.forEach(blog => {
+                const blogCard = document.createElement('div');
+                blogCard.className = 'blog-card';
+
+                const publishDate = new Date(blog.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+
+                blogCard.innerHTML = `
+                    <img src="${blog.image || 'assets/images/Rectangle 3463644.png'}" alt="${blog.title}">
+                    <div class="blog-card-content">
+                        <h3>${blog.categoryName}</h3>
+                        <p>${blog.summary}</p>
+                        <div class="blog-card-bottom">
+                            <span>${publishDate}</span>
+                            <a href="blog-detail.html?slug=${blog.slug}" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                `;
+
+                blogGrid.appendChild(blogCard);
+            });
+        }
+
+        // Filter blogs by category
+        function filterBlogs(categorySlug) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${categorySlug}"]`).classList.add('active');
+
+            // Filter and render
+            if (categorySlug === 'all') {
+                renderBlogs(allBlogs);
+            } else {
+                const filtered = allBlogs.filter(blog => blog.categorySlug === categorySlug);
+                renderBlogs(filtered);
+            }
+        }
+
+        // Add event listener to "All posts" button
+        document.addEventListener('DOMContentLoaded', () => {
+            const allPostsBtn = document.querySelector('[data-category="all"]');
+            if (allPostsBtn) {
+                allPostsBtn.addEventListener('click', () => filterBlogs('all'));
+            }
+
+            // Fetch blogs on page load
+            fetchBlogs();
+        });
+    </script>
 </body>
 
 </html>
