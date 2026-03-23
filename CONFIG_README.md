@@ -96,8 +96,4 @@ Then use it in your HTML files:
 const appointmentUrl = CONFIG.getAppointmentUrl();
 ```
 
-### Notes
-- Only one file needs to be updated when changing environments
-- All pages automatically use the updated URLs
-- No hardcoded URLs in HTML files
-- Easy to maintain and scale
+

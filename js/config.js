@@ -5,13 +5,15 @@
 
 const CONFIG = {
     // API Base URL - Change this when moving to production
-    API_BASE_URL: 'http://192.168.1.37:5019/api',
+    // Development: http://192.168.1.48:5019/api
+    // Production: https://api.getmyphysio.in/api
+    API_BASE_URL: 'http://192.168.1.48:5019/api',
     
     // Blog API Endpoints
     BLOGS: {
-        // Get all public blogs
+        // Get all public blogs - Returns list of all published blogs
         PUBLIC_LIST: '/blogs/public',
-        // Get single blog by slug
+        // Get single blog by slug - Returns specific blog details
         PUBLIC_DETAIL: '/blogs/public'
     },
     

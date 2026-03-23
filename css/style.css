@@ -670,6 +670,12 @@ ul {
     flex-wrap: wrap;
 }
 
+#category-filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .filter-label {
     font-size: 20px;
     font-weight: 600;

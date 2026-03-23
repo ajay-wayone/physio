@@ -43,18 +43,19 @@
                 <div class="blog-filters">
                     <span class="filter-label">Filters :</span>
                     <button class="filter-btn active" data-category="all">All posts</button>
-                    <div id="category-filters"></div>
+                    <div id="category-filters" style="display: flex; gap: 20px;"></div>
                 </div>
 
                 <div id="blog-grid" class="blog-grid">
                     <!-- Blog cards will be loaded here dynamically -->
                 </div>
-                
+
                 <div id="loading" class="loading-spinner" style="display: none; text-align: center; padding: 40px;">
                     <p>Loading blogs...</p>
                 </div>
-                
-                <div id="error-message" class="error-message" style="display: none; text-align: center; padding: 40px; color: #d32f2f;">
+
+                <div id="error-message" class="error-message"
+                    style="display: none; text-align: center; padding: 40px; color: #d32f2f;">
                     <p>Failed to load blogs. Please try again later.</p>
                 </div>
             </div>
@@ -69,10 +70,10 @@
 
     <!-- HTML Inclusion Script -->
     <script src="js/include.js"></script>
-    
+
     <!-- Configuration Script -->
     <script src="js/config.js"></script>
-    
+
     <!-- Blogs Dynamic Script -->
     <script>
         const API_URL = CONFIG.getBlogListUrl();
@@ -103,24 +104,24 @@
                 }
 
                 const data = await response.json();
-                
+
                 if (!data.data || !data.data.result) {
                     throw new Error('Invalid API response format');
                 }
 
                 allBlogs = data.data.result || [];
 
-                // Extract unique categories
-                const categoryMap = {};
+                // Extract unique user types (Patient and Physiotherapist)
+                const userTypeMap = {};
                 allBlogs.forEach(blog => {
-                    if (!categoryMap[blog.categorySlug]) {
-                        categoryMap[blog.categorySlug] = {
-                            name: blog.categoryName,
-                            slug: blog.categorySlug
+                    if (blog.userType && !userTypeMap[blog.userType]) {
+                        userTypeMap[blog.userType] = {
+                            name: blog.userType.charAt(0).toUpperCase() + blog.userType.slice(1),
+                            slug: blog.userType
                         };
                     }
                 });
-                categories = Object.values(categoryMap);
+                categories = Object.values(userTypeMap);
 
                 // Render category filters
                 renderCategoryFilters();
@@ -134,7 +135,7 @@
                 console.error('API URL:', API_URL);
                 loadingEl.style.display = 'none';
                 errorEl.style.display = 'block';
-                errorEl.innerHTML = `<p>Failed to load blogs. Error: ${error.message}</p><p style="font-size: 0.9rem; margin-top: 10px;">Make sure the API server is running and accessible.</p>`;
+                errorEl.innerHTML = `<p>Error: ${error.message}</p><p style="font-size: 0.9rem; margin-top: 10px;">Make sure the API server is running and accessible.</p>`;
             }
         }
 
@@ -189,19 +190,19 @@
             });
         }
 
-        // Filter blogs by category
-        function filterBlogs(categorySlug) {
+        // Filter blogs by user type
+        function filterBlogs(userType) {
             // Update active button
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            document.querySelector(`[data-category="${categorySlug}"]`).classList.add('active');
+            document.querySelector(`[data-category="${userType}"]`).classList.add('active');
 
             // Filter and render
-            if (categorySlug === 'all') {
+            if (userType === 'all') {
                 renderBlogs(allBlogs);
             } else {
-                const filtered = allBlogs.filter(blog => blog.categorySlug === categorySlug);
+                const filtered = allBlogs.filter(blog => blog.userType === userType);
                 renderBlogs(filtered);
             }
         }
