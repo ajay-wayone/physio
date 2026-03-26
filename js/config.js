@@ -7,7 +7,7 @@ const CONFIG = {
     // API Base URL - Change this when moving to production
     // Development: http://192.168.1.48:5019/api
     // Production: https://api.getmyphysio.in/api
-    API_BASE_URL: 'http://192.168.1.48:5019/api',
+    API_BASE_URL: 'https://api.getmyphysio.in/api',
     
     // Blog API Endpoints
     BLOGS: {
