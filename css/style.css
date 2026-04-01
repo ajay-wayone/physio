@@ -4562,19 +4562,18 @@ body {
 /* QR Wrapper Styling */
 .qr-code-wrapper-v2 {
     margin-top: 20px;
-    background: #fff;
-    padding: 15px;
-    display: inline-block;
-    border-radius: 12px;
+    background: transparent;
+    padding: 0;
+    display: inline-flex;
+    width: fit-content;
     text-align: center;
 }
 
 .qr-img-v2 {
-    width: 120px;
-    /* Adjust size as needed */
-    height: 120px;
+    width: 140px;
+    height: 140px;
     display: block;
-    margin: 0 auto 8px;
+    margin: 0 auto 6px;
 }
 
 .qr-text-v2 {
