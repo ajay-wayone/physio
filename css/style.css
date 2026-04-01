@@ -670,6 +670,12 @@ ul {
     flex-wrap: wrap;
 }
 
+#category-filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .filter-label {
     font-size: 20px;
     font-weight: 600;
@@ -808,7 +814,7 @@ ul {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding-top: 250px;
+    /* padding-top: 250px; */
 }
 
 /* title */
@@ -837,7 +843,7 @@ ul {
     }
 
     .safety-hero-container {
-        padding-top: 150px;
+        /* padding-top: 150px; */
     }
 }
 
@@ -1357,7 +1363,7 @@ ul {
 .stats-section {
     background-color: var(--black);
     color: var(--white);
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .stats-container {
@@ -2481,39 +2487,43 @@ ul {
    New Reality Section V2 (WHY MY PHYSIO EXISTS)
    ============================================================== */
 .reality-section-v2 {
-    padding: 40px 0;
+    padding: 80px 0 60px;
     background-color: var(--white);
     font-family: var(--font-sans);
 }
 
+/* ── Header ── */
 .reality-header-v2 {
     text-align: center;
     margin-bottom: 50px;
 }
 
 .section-title-v2 {
-    font-size: 36px;
-    font-weight: 800;
-    color: #222;
-    margin-bottom: 16px;
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .section-subtitle-v2 {
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 22px;
     font-weight: 600;
     font-style: italic;
-    color: #555;
-    line-height: 1.4;
-    max-width: 800px;
+    color: var(--text-light);
+    line-height: 1.45;
+    max-width: 760px;
     margin: 0 auto;
 }
 
+/* ── Two-column grid ── */
 .reality-grid-v2 {
     display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 28px;
+    margin-bottom: 0;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
@@ -2521,36 +2531,45 @@ ul {
 
 .reality-column-v2 {
     flex: 1;
-    border-radius: 12px;
-    padding: 40px;
+    border-radius: var(--radius-md);
+    padding: 40px 36px;
 }
 
+/* left  – pinkish */
 .negative-col-v2 {
     background-color: #FFF6F6;
 }
 
+/* right – light blue */
 .positive-col-v2 {
     background-color: #EAF8FF;
 }
 
+/* column label */
 .col-heading-v2 {
-    font-size: 14px;
+
+    font-size: 16px;
     font-weight: 600;
-    color: #888;
-    margin-bottom: 8px;
+    color: #999;
+    letter-spacing: 0.4px;
+    margin-bottom: 56px;
+    margin-top: -26px;
 }
 
+/* column title */
 .col-title-v2 {
-    font-size: 22px;
+    font-family: var(--font-heading);
+    font-size: 21px;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 30px;
+    color: var(--text-dark);
+    margin-bottom: 32px;
 }
 
+/* ── Individual cards inside each column ── */
 .reality-card-v2 {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 24px;
 }
 
@@ -2558,27 +2577,38 @@ ul {
     margin-bottom: 0;
 }
 
+/* icon wrapper */
 .reality-icon-v2 {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
-.reality-icon-v2 img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+/* SVG icons drawn inline – no image files needed */
+.icon-warning {
+    width: 22px;
+    height: 22px;
+}
+
+.icon-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1B75BC;
+    flex-shrink: 0;
+    margin-top: 5px;
 }
 
 .reality-content-v2 h4 {
     font-size: 16px;
     font-weight: 700;
     color: #333;
-    margin-bottom: 2px;
+    margin-bottom: 0;
+    line-height: 1.4;
 }
 
 .reality-content-v2 p {
@@ -2587,17 +2617,20 @@ ul {
     line-height: 1.5;
 }
 
+/* ── Footer text ── */
 .reality-footer-v2 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 44px;
 }
 
 .reality-footer-v2 p {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     color: #333;
+    line-height: 1.6;
 }
 
+/* ── Responsive ── */
 @media (max-width: 991px) {
     .reality-grid-v2 {
         flex-direction: column;
@@ -2620,15 +2653,21 @@ ul {
     }
 
     .section-subtitle-v2 {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .reality-column-v2 {
-        padding: 30px 20px;
+        padding: 28px 20px;
     }
 
     .reality-footer-v2 p {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reality-section-v2 {
+        padding: 56px 0 44px;
     }
 }
 
@@ -2969,6 +3008,7 @@ ul {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center !important;
     justify-content: flex-end;
     align-items: center;
     position: relative;
@@ -4319,6 +4359,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -4505,4 +4546,65 @@ body {
     .testimonial-section {
         padding: 50px 0;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* QR Wrapper Styling */
+.qr-code-wrapper-v2 {
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    display: inline-block;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.qr-img-v2 {
+    width: 120px;
+    /* Adjust size as needed */
+    height: 120px;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.qr-text-v2 {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* --- Responsive Behavior --- */
+
+/* Mobile par QR code ko hide karne ke liye */
+@media (max-width: 768px) {
+    .qr-code-wrapper-v2 {
+        display: none;
+        /* Mobile user scan nahi kar sakta, isliye hide */
+    }
+
+    .app-actions-v2 {
+        display: flex;
+        flex-direction: column;
+        /* Mobile par buttons ek ke niche ek */
+        gap: 10px;
+    }
+}
+
+/* Button style fix (if using <a> instead of <button>) */
+.app-btn-v2 {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    /* Aapki existing button styling yahan aayegi */
 }
